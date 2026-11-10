@@ -1,0 +1,14 @@
+/* Accessible edition: keyboard affordances and calmer motion preferences. */
+:where(a,button,input,select,textarea,[tabindex]):focus-visible {
+  outline: 3px solid #ffdb79 !important;
+  outline-offset: 4px !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  .cursor-glow, .pointer-light, .grain { display: none !important; }
+}

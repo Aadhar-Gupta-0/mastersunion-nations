@@ -1,0 +1,63 @@
+
+/* 29 Oct final: white university sticker, safe event-card typography. */
+html body .mu-university-wordmark {
+  filter:brightness(0) invert(1)!important;
+  background:transparent!important;
+}
+html body #home .pass {
+  grid-template-columns:minmax(0,1.05fr) minmax(0,1.45fr) minmax(0,.95fr) minmax(320px,1.5fr)!important;
+}
+html body #home .pass-seg {min-width:0;box-sizing:border-box;padding-left:clamp(12px,1.35vw,20px);padding-right:clamp(12px,1.35vw,20px)}
+html body #home .pass-seg:not(.pass-count) b {
+  font-size:clamp(.88rem,1.15vw,1.14rem)!important;
+  line-height:1.25!important;
+  letter-spacing:-.025em!important;
+  max-width:100%;
+}
+html body #home .pass-seg:not(.pass-count) b .board-text,
+html body #home .pass-seg:not(.pass-count) b .board-char {
+  font-size:inherit!important;
+  letter-spacing:inherit!important;
+}
+@media(min-width:761px) and (max-width:1100px) {
+  html body #home .pass{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:760px) {
+  html body #home .pass{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  html body #home .pass-count{grid-column:1/-1}
+  html body #home .pass-seg:not(.pass-count) b {font-size:clamp(.73rem,3.25vw,1rem)!important;white-space:normal}
+}
+@media(max-width:390px) {
+  html body #home .pass-seg:not(.pass-count) b{font-size:clamp(.65rem,3vw,.83rem)!important}
+}
+/* Removed the temporary illustrated-loader experiment; original photographic character composition restored. */
+
+/* High-resolution, artifact-cleaned Yogi loader: native 543 x 724 pixels/frame.
+   Reuse the existing visibility-aware character timer; no video or extra loop. */
+.committee-page[data-committee="AIPPM"] .mu-sprite-loader {
+  width:clamp(158px,14.2vw,208px)!important;
+  aspect-ratio:543/724!important;
+  height:auto!important;
+  bottom:clamp(20px,4vh,42px)!important;
+  z-index:3!important;
+  filter:drop-shadow(0 12px 15px rgba(0,0,0,.45));
+}
+.committee-page[data-committee="AIPPM"] .mu-sprite-loader .mu-sprite-frame {
+  background-size:400% 100%;
+  background-repeat:no-repeat;
+  image-rendering:auto;
+  background-position-y:0;
+  background-color:transparent;
+}
+@media(max-width:800px){
+  .committee-page[data-committee="AIPPM"] .mu-sprite-loader {
+    width:clamp(104px,18vw,150px)!important;
+    bottom:clamp(12px,3vh,28px)!important;
+  }
+}
+@media(max-width:560px){
+  .committee-page[data-committee="AIPPM"] .mu-sprite-loader {
+    left:44%!important;
+    width:clamp(88px,27vw,135px)!important;
+  }
+}

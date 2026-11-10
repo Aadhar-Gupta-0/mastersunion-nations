@@ -1,0 +1,6 @@
+/* Reset card: a black screen and the line only; the map appears after it. */
+.impact-veil strong{font-stretch:112%;font-weight:900;letter-spacing:-.05em}
+
+/* Home-layer effects never linger over the map, even if a strike animation is cut short. */
+body.at-map .thud-ring,body.at-map .strike-wave,body.at-map .strike-flash{visibility:hidden}
+body.at-map .hud{visibility:hidden;transition:opacity .3s,visibility 0s .3s}

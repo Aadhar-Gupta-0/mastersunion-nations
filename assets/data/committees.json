@@ -1,0 +1,98 @@
+{
+  "event": {
+    "name": "Masters Union Nations",
+    "dates": "28 & 29 November 2026",
+    "venue": "CDS Corporate Tower, Udyog Vihar, Gurugram",
+    "prizePool": "₹2,20,000"
+  },
+  "committees": [
+    {
+      "slug": "unhrc",
+      "code": "UNHRC",
+      "full": "United Nations Human Rights Council",
+      "agenda": "Human trafficking, child exploitation and the Sudan conflict.",
+      "prizes": [
+        "Total Prize Pool — ₹30,000"
+      ],
+      "matrix": "",
+      "registrationUrl": ""
+    },
+    {
+      "slug": "mcc",
+      "code": "MCC",
+      "full": "Midnight Crisis Committee",
+      "agenda": "Eternal Court: Afterlife — who killed Death, and who rules in its place?",
+      "prizes": [
+        "Total Prize Pool — ₹30,000"
+      ],
+      "matrix": "",
+      "registrationUrl": ""
+    },
+    {
+      "slug": "ccep",
+      "code": "CCEP",
+      "full": "Corporate Engagement and Policy Making",
+      "agenda": "To be announced",
+      "prizes": [
+        "Total Prize Pool — ₹30,000"
+      ],
+      "matrix": "",
+      "registrationUrl": ""
+    },
+    {
+      "slug": "ipl",
+      "code": "IPL",
+      "full": "Indian Premier League",
+      "agenda": "Franchise auction: plan, bid and build a winning XI.",
+      "prizes": [
+        "Total Prize Pool — ₹20,000"
+      ],
+      "matrix": "",
+      "registrationUrl": ""
+    },
+    {
+      "slug": "aippm",
+      "code": "AIPPM",
+      "full": "All India Political Parties Meet",
+      "agenda": "एक राष्ट्र, एक संहिता — समान नागरिक संहिता (UCC)",
+      "prizes": [
+        "Total Prize Pool — ₹30,000"
+      ],
+      "matrix": "",
+      "registrationUrl": ""
+    },
+    {
+      "slug": "dalal-street",
+      "code": "DALAL STREET",
+      "full": "Dalal Street",
+      "agenda": "IPO underwriting simulation.",
+      "prizes": [
+        "Total Prize Pool — ₹20,000"
+      ],
+      "matrix": "",
+      "registrationUrl": ""
+    },
+    {
+      "slug": "startup",
+      "code": "STARTUP",
+      "full": "Startup Boardroom",
+      "agenda": "Build a venture solving a real Indian problem; pitch to investors in 48 hours.",
+      "prizes": [
+        "Total Prize Pool — ₹45,000"
+      ],
+      "matrix": "",
+      "registrationUrl": ""
+    },
+    {
+      "slug": "ip",
+      "code": "IP",
+      "full": "International Press",
+      "agenda": "Live reporting, photography and caricature across all committees.",
+      "prizes": [
+        "Total Prize Pool — ₹15,000"
+      ],
+      "matrix": "",
+      "registrationUrl": ""
+    }
+  ]
+}

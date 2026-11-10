@@ -1,0 +1,300 @@
+/* Focused visual repair for the four V2 committee pages. */
+
+/* Editorial interiors: keep the shared cinematic backdrop and remove the nested metal-card treatment. */
+.committee-page.open:is([data-committee="MCC"],[data-committee="IP"],[data-committee="AIPPM"],[data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) :is(.cp-brief,.cp-do,.cp-awards,.cp-register),
+.dalal-page.open :is(.dp-brief,.dp-playbook,.dp-awards,.dp-register){background:transparent!important;border-color:#ffffff24!important;box-shadow:none!important}
+.committee-page.open:is([data-committee="MCC"],[data-committee="IP"],[data-committee="AIPPM"],[data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) :is(.cp-section-label,.cp-brief-copy,.cp-do-head,.cp-steps,.cp-awards-head,.cp-awards article,.cp-register>div),
+.dalal-page.open :is(.dp-section-title,.dp-brief-copy,.dp-awards-head,.dp-playbook>div,.dp-playbook ol,.dp-register-copy,.dp-form){position:relative;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;backdrop-filter:none!important}
+.committee-page.open:is([data-committee="MCC"],[data-committee="IP"],[data-committee="AIPPM"],[data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) :is(.cp-section h2,.cp-do h2,.cp-awards h2,.cp-register h2),
+.dalal-page.open :is(.dp-section h2,.dp-awards h2,.dp-playbook h2,.dp-register h2){font-size:clamp(2.65rem,5.2vw,5.4rem);line-height:.94;letter-spacing:-.065em}
+.committee-page.open:is([data-committee="MCC"],[data-committee="IP"],[data-committee="AIPPM"],[data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) :is(.cp-brief-copy p,.cp-do-head>p,.cp-steps li small,.cp-awards-head>p,.cp-register>div>p),
+.dalal-page.open :is(.dp-brief-copy p,.dp-playbook>div>p,.dp-playbook li small,.dp-awards-head>p,.dp-register-copy>p){font-size:clamp(1rem,1.2vw,1.12rem)!important;line-height:1.65!important;color:#f0ece6!important;text-shadow:0 2px 18px #000c}
+.committee-page.open:is([data-committee="MCC"],[data-committee="IP"],[data-committee="AIPPM"],[data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) :is(.cp-lead,.cp-steps li b,.cp-awards article b),
+.dalal-page.open :is(.dp-lead,.dp-playbook li b,.dp-awards article b){color:#fff!important;text-shadow:0 2px 18px #000c}
+.committee-page.open:is([data-committee="MCC"],[data-committee="IP"],[data-committee="AIPPM"],[data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-section-label h2,
+.committee-page.open:is([data-committee="MCC"],[data-committee="IP"],[data-committee="AIPPM"],[data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-do-head h2,
+.dalal-page.open .dp-section-title h2,.dalal-page.open .dp-playbook>div h2{max-width:10ch}
+.committee-page.open:is([data-committee="MCC"],[data-committee="IP"],[data-committee="AIPPM"],[data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-steps,
+.dalal-page.open .dp-playbook ol{border-top:1px solid #ffffff55}
+.committee-page.open:is([data-committee="MCC"],[data-committee="IP"],[data-committee="AIPPM"],[data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-steps li,
+.dalal-page.open .dp-playbook li{padding:22px 0;border-bottom-color:#ffffff42}
+.committee-page.open[data-committee="MCC"] .cp-steps li{grid-template-columns:44px minmax(0,1fr);padding-inline:20px;gap:12px}
+.committee-page.open:is([data-committee="MCC"],[data-committee="IP"],[data-committee="AIPPM"],[data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-steps li b,
+.dalal-page.open .dp-playbook li b{font-size:clamp(1.1rem,1.5vw,1.35rem)}
+.committee-page.open:is([data-committee="MCC"],[data-committee="IP"],[data-committee="AIPPM"],[data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-awards article,
+.dalal-page.open .dp-awards article{min-height:130px;border-bottom:1px solid #ffffff48!important}
+.committee-page.open:is([data-committee="MCC"],[data-committee="IP"],[data-committee="AIPPM"],[data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-scroll-backdrop{filter:brightness(.76) saturate(.86)}
+.committee-page.open[data-committee="IP"] .cp-scroll-backdrop{background-image:linear-gradient(180deg,#07101c9c,#07101c8c),url('../images/ip-newsroom-v2.webp')!important}
+.committee-page.open[data-committee="MCC"] .cp-scroll-backdrop{background-image:linear-gradient(180deg,#070b1a83,#070b1a78),url('../images/mcc-new-york-night.webp')!important}
+.committee-page.open[data-committee="AIPPM"] .cp-scroll-backdrop{background-image:linear-gradient(180deg,#160c0780,#170d087d),url('../images/aippm-parliament-live.webp')!important}
+
+
+/* Align each registration introduction to the same 720px column as its form. */
+.committee-page.open .cp-register{grid-template-columns:1fr;gap:18px;padding-block:clamp(54px,7vw,92px)}
+.committee-page.open .cp-register>div:first-child{width:min(720px,100%);max-width:720px!important;margin-inline:auto;text-align:center}
+.committee-page.open .cp-register>div:first-child>small{justify-content:center;text-align:center}
+.committee-page.open:is([data-committee="MCC"],[data-committee="IP"],[data-committee="AIPPM"]) .cp-register>div:first-child h2{display:none}
+.committee-page.open .cp-register>div:first-child>p{max-width:720px;margin:10px auto 0}
+.committee-page.open:is([data-committee="MCC"],[data-committee="IP"],[data-committee="AIPPM"]) .cp-event-meta{display:none}
+.committee-page.open .cp-register-actions{width:100%;max-width:720px;margin:auto}
+.mu-inline-form,.dalal-page.open .dp-register .mu-inline-form{width:min(720px,100%);max-width:720px;margin:0 auto;padding:clamp(24px,4vw,42px)!important;border:1px solid #f0e5d370!important;border-radius:12px!important;background:linear-gradient(145deg,#17202cdd,#090d17e8 65%,#17141acc)!important;box-shadow:0 25px 70px #0008,inset 0 1px #fff3!important;backdrop-filter:blur(16px)!important}
+.mu-inline-form h3{display:block;text-align:center;font-size:clamp(1.8rem,3vw,2.5rem)}
+.mu-inline-form>p{text-align:center}
+.mu-fields{grid-template-columns:minmax(0,1fr);gap:17px}
+.mu-fields label,.mu-inline-form .mu-fields label{font-size:14px!important;line-height:1.4}
+.mu-fields label:last-child{grid-column:auto}
+.mu-inline-form :is(input:not([type=checkbox]),select,textarea){min-height:50px;background:#080b12d9;border-color:#f0e5d36b;border-radius:5px}
+.mu-inline-form textarea{min-height:96px}
+.mu-inline-form .mu-consent{font-size:14px!important}
+.mu-inline-form>small{font-size:12px!important;color:#ddd5ca}
+.mu-inline-form .mu-submit{min-height:52px;align-items:center;font-size:15px}
+
+
+/* International Press uses the real newsroom still for the hero and content backdrop; camera stays in its entrance only. */
+.committee-page.open[data-committee="IP"] .cinema-hero-scene .ch-photo{background-image:none!important;opacity:0!important}
+.committee-page.open[data-committee="IP"] .mu-newsroom-stage{z-index:1;background-image:linear-gradient(90deg,#07101c88,#07101c47 50%,#07101ca6),linear-gradient(0deg,#070a10b8,transparent 57%,#070a104d),url('../images/ip-newsroom-v2.webp');background-position:center;background-size:cover;animation:muStudioPush 24s ease-in-out infinite alternate}
+.committee-page.open[data-committee="IP"] .cp-hero:before{background:linear-gradient(90deg,#06101b90,#06101b30 56%,#06101b77),linear-gradient(0deg,#06101b8a,transparent 38%,#06101b30)!important}
+.committee-page.open[data-committee="AIPPM"] .mu-parliament-stage .mu-podium{display:none!important}
+
+/* Dalal Street: historic trading floor, title and controls above a restrained simulated quote board. */
+.dalal-page:not(.open) .dp-hero:before,.dalal-page:not(.open) .dp-bse-panorama,.dalal-page:not(.open) .dp-scroll{background-image:none!important}
+.dalal-page.open .dp-scroll{background:linear-gradient(180deg,#090a0bd1,#090a0bc2),url('../images/dalal-trading-floor-v3.webp') center/cover fixed no-repeat!important}
+.dalal-page.open .dp-hero:before{z-index:-2;background-image:linear-gradient(90deg,#080909bb 0,#08090950 48%,#08090924 100%),linear-gradient(0deg,#080909ed,transparent 42%,#08090941),url('../images/dalal-trading-floor-v3.webp')!important;background-position:center;background-size:cover;background-repeat:no-repeat;animation:dpHeroArrival 1.5s ease both}
+.dalal-page.open .dp-hero:after{z-index:-1;background:linear-gradient(0deg,#090a0be0,transparent 67%,#090a0b48)!important}
+.dalal-page.open .dp-bse-panorama{display:none!important}
+.dalal-page.open .dp-hero{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;align-content:space-between;justify-items:center;gap:clamp(26px,5vh,52px);min-height:max(720px,100dvh);padding:clamp(95px,12vh,125px) clamp(20px,4vw,56px) clamp(24px,4vh,46px)}
+.dalal-page.open .dp-hero-copy{position:relative!important;top:auto!important;left:auto!important;right:auto!important;grid-row:1;width:min(850px,100%)!important;padding:0!important;align-items:center!important;text-align:center!important;transform:none!important}
+.dalal-page.open .dp-hero h1{font-size:clamp(3.7rem,7.5vw,7.3rem)!important;line-height:.83!important;margin:18px 0 14px}
+.dalal-page.open .dp-hero-copy>p:not(.dp-eyebrow):not(.dp-hero-tagline),.dalal-page.open .dp-hero-copy .dp-meta{display:none!important}
+.dalal-page.open .dp-hero-copy>.dp-hero-tagline{display:block!important;max-width:none;margin:0;color:#f2dfbc;font:700 clamp(11px,1.1vw,15px)/1.5 var(--mono,monospace);letter-spacing:.18em;text-shadow:0 3px 16px #000}
+.dp-hero-actions{display:flex;justify-content:center;align-items:stretch;gap:14px;margin-top:23px}
+.dp-hero-actions :is(.dp-primary,.mu-dalal-register){display:inline-flex;align-items:center;justify-content:space-between;gap:18px;min-width:215px;min-height:48px;margin:0;padding:12px 18px;border-radius:999px;font:700 13px var(--sans,Arial);white-space:nowrap}
+.mu-dalal-register{border:1px solid #f2dfbd9c;background:#140f0be0;color:#fff1d5;cursor:pointer}
+.mu-dalal-register:hover{background:#302012}
+.dalal-page.open .mu-market-board{position:relative!important;grid-row:2;left:auto!important;bottom:auto!important;width:min(1120px,100%)!important;max-height:none!important;transform:none!important;border:0!important;border-top:1px solid #caa75baf!important;border-bottom:1px solid #caa75b68!important;border-radius:0!important;background:linear-gradient(90deg,#0b0a08e8,#15100be8 50%,#0b0a08e8)!important;box-shadow:none!important;backdrop-filter:none!important}
+.mu-market-top{background:transparent!important;border-bottom:1px solid #a9834e65;color:#e9d4ad!important}
+.mu-market-head{color:#d0b78d!important}
+.mu-market-row>span,.mu-market-row>strong{background:linear-gradient(180deg,#211a12a6,#080908ad)!important;border-bottom:1px solid #aa8c5b42}
+.mu-market-row{transition:color .25s}
+.dalal-page.open .dp-nav-cta{scroll-behavior:smooth}
+.dalal-page.open .dp-nav-right{justify-self:end;display:flex;align-items:center;justify-content:flex-end;gap:16px;min-width:max-content}
+.dalal-page.open .dp-register{grid-template-columns:1fr;gap:18px;padding-block:64px}
+.dalal-page.open .dp-register-copy{width:min(720px,100%);margin-inline:auto;text-align:center}
+.dalal-page.open .dp-register-copy h2{display:none}
+.dalal-page.open .dp-register-copy>p{max-width:720px;margin:10px auto 0}
+.dalal-page.open .dp-register-details{display:none}
+.dalal-page.open .dp-form,.dalal-page.open .dp-register .mu-inline-form{width:min(720px,100%);margin:auto}
+.dalal-page.open .dp-hero-copy :is(a,button){pointer-events:auto}
+.dalal-page.open .dp-register-copy h2[hidden]{display:none!important}
+
+/* Archive-to-market transition: begin on the trading floor, then let credited exchange footage take over. */
+.dc-archive-floor{position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,#100a06a8,#100a0640 54%,#100a0663),linear-gradient(0deg,#090706a8,transparent 60%),url('../images/dalal-trading-floor-v3.webp') center/cover no-repeat;opacity:1;transform:scale(1.035);transition:opacity .6s ease,transform 1s ease}
+.dc-era-caption{position:absolute;z-index:4;left:clamp(22px,7vw,100px);bottom:clamp(85px,13vh,150px);color:#ead6af;font:600 clamp(9px,.8vw,12px)/1.7 var(--mono,monospace);letter-spacing:.25em;transition:opacity .35s ease,transform .55s ease}
+.dalal-crash.market-digital .dc-archive-floor{opacity:.16;transform:scale(1.1)}
+.dalal-crash.market-digital .dc-era-caption{opacity:0;transform:translateY(-10px)}
+.dalal-crash.active:not(.market-digital) .dc-market-footage{z-index:0;opacity:0!important;transition:opacity .55s ease,transform 1.1s ease,filter .7s ease}
+.dalal-crash.market-digital .dc-market-footage{opacity:.68!important}
+.dalal-crash.market-falling .dc-market-footage{opacity:.72!important;filter:brightness(.5) contrast(1.25) saturate(.62) sepia(.2)!important}
+.dalal-crash.market-awake .dc-ticker{border:0;border-bottom:1px solid #d4ad675e;border-radius:0;background:#08090770;color:#e4c997}
+.dalal-crash.market-falling .dc-atmosphere{background:radial-gradient(ellipse at 50% 48%,#c5211e42,transparent 48%),linear-gradient(100deg,#0b0606a3,#2d0907a6 51%,#080607bd)}
+.dalal-crash.market-falling .dc-title{opacity:0!important}
+.dalal-crash.title-assembling .dc-title{opacity:1!important}
+
+.mcc-night-flight{background:#070b19 url('../images/mcc-new-york-night.webp') center/cover no-repeat}
+.mcc-night-flight.video-fallback{background-image:linear-gradient(180deg,#05081635,#0609188a),url('../images/mcc-new-york-night.webp')}
+.mcc-night-flight.video-fallback .mcc-drone-video{visibility:hidden}
+.mcc-night-flight.video-fallback .mcc-flight-title{opacity:0}
+.mcc-night-flight.video-fallback.title-reveal .mcc-flight-title{opacity:1}
+
+@media(max-width:800px){
+  .mu-fields{grid-template-columns:minmax(0,1fr)}
+  .dalal-page.open .dp-hero h1{font-size:clamp(3.5rem,10vw,6rem)!important}
+  .mu-market-board{width:94vw!important;max-height:37%!important}
+  .mu-market-row,.mu-market-head{gap:5px;padding-inline:10px}
+  .mu-market-row{font-size:10px}
+  .mu-market-row>span{padding:4px}
+  .mu-market-top time,.mu-market-bottom span:last-child{display:none}
+  .mu-market-row:nth-child(n+4){display:none}
+}
+@media(max-width:560px){
+  .mu-fields{grid-template-columns:1fr}
+  .mu-fields label:last-child{grid-column:auto}
+  .dalal-page.open .mu-market-board{width:100%!important}
+  .mu-market-row,.mu-market-head{grid-template-columns:minmax(0,1.45fr) 1fr .9fr .8fr;font-size:8px;padding-inline:7px}
+  .mu-market-head{font-size:6px;letter-spacing:.1em}
+  .dalal-page.open .dp-hero{min-height:100dvh;padding:92px 16px 24px;gap:22px}
+  .dalal-page.open .dp-hero h1{font-size:clamp(2.9rem,12vw,4.3rem)!important}
+  .dp-hero-actions{flex-direction:column;gap:10px;width:min(270px,100%);margin-top:16px}
+  .dp-hero-actions :is(.dp-primary,.mu-dalal-register){width:100%;min-width:0;min-height:44px;padding:10px 17px;font-size:12px}
+  .dc-era-caption{bottom:42%;left:7%;font-size:8px}
+  .committee-page.open:is([data-committee="MCC"],[data-committee="IP"],[data-committee="AIPPM"],[data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) :is(.cp-section,.cp-do,.cp-awards,.cp-register){padding-inline:22px}
+}
+@media(max-width:800px){.committee-page.open:is([data-committee="MCC"],[data-committee="IP"],[data-committee="AIPPM"],[data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-awards{grid-template-columns:repeat(2,minmax(0,1fr))}.committee-page.open:is([data-committee="MCC"],[data-committee="IP"],[data-committee="AIPPM"],[data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-awards-head{grid-column:1/-1}}
+
+/* Keep the fixed soundtrack control clear of the map heading and Dalal's quote board on phones. */
+@media(max-width:560px){.at-map .journey-music-toggle,body:has(#committeePage.open) .journey-music-toggle,body:has(#dalalCommitteePage.open) .journey-music-toggle{top:74px;right:12px;bottom:auto}.journey-music-toggle{min-width:42px;justify-content:center;padding:6px}.journey-music-label{display:none}}
+
+
+/* Readable editorial captions and award details in the four focused committees. */
+.committee-page.open:is([data-committee="MCC"],[data-committee="IP"],[data-committee="AIPPM"]) :is(.cp-section-label small,.cp-do-head>small,.cp-awards-head>small,.cp-register>div>small,.cp-awards article small),
+.dalal-page.open :is(.dp-section-title small,.dp-awards-head small,.dp-playbook>div>small,.dp-register-copy>small,.dp-awards article small){font-size:12px!important;font-weight:700;line-height:1.5;color:#f5ddb0!important;letter-spacing:.12em}
+.committee-page.open:is([data-committee="MCC"],[data-committee="IP"],[data-committee="AIPPM"]) :is(.cp-awards article span,.cp-awards-head>p,.cp-steps li small),
+.dalal-page.open :is(.dp-awards article span,.dp-awards-head>p,.dp-playbook li small){font-size:15px!important;line-height:1.55!important;color:#f1ebe2!important}
+.committee-page.open:is([data-committee="MCC"],[data-committee="IP"],[data-committee="AIPPM"]) .cp-awards article small{margin-bottom:8px;align-self:flex-start}
+.committee-page.open:is([data-committee="MCC"],[data-committee="IP"],[data-committee="AIPPM"]) .cp-awards article b{margin:4px 0 10px}
+.committee-page.open[data-committee="MCC"] .cp-steps li>i{font-size:13px;line-height:1.5;padding-top:2px}
+.committee-page.open[data-committee="MCC"] .mu-mcc-tagline{display:block;margin:0 0 14px;color:#ede5ff;font:600 clamp(11px,1vw,14px)/1.6 var(--mono,monospace);letter-spacing:.19em;text-shadow:0 3px 22px #5e438e99}
+.committee-page:not([data-committee="MCC"]) .mu-mcc-tagline{display:none!important}
+.committee-page.open[data-committee="AIPPM"] .cp-hero h1{font-size:clamp(3.2rem,7.9vw,7.6rem)!important;max-width:1100px}
+.committee-page.open[data-committee="AIPPM"] .cp-hero-copy{margin-bottom:clamp(90px,15vh,150px)}
+
+/* AIPPM: four-frame character sheets share one visibility-aware timer. */
+.committee-page.open[data-committee="AIPPM"] .mu-parliament-haze{background:linear-gradient(180deg,transparent 52%,#120d0dcc),url('../images/aippm-props/scene_ground_haze.svg') center bottom/100% 35% no-repeat}
+.committee-page:not([data-committee="AIPPM"]) .mu-character-stage{display:none}
+.committee-page[data-committee="AIPPM"] .mu-character-stage{position:absolute;z-index:2;inset:0;pointer-events:none;overflow:hidden}
+.committee-page[data-committee="AIPPM"] .mu-sprite-character{position:absolute;left:var(--stage-x);bottom:clamp(25px,5.2vh,58px);width:clamp(84px,9.4vw,156px);aspect-ratio:543/724;margin:0;transform:translateX(-50%);filter:drop-shadow(0 12px 15px #000b)}
+.committee-page[data-committee="AIPPM"] .mu-sprite-frame{position:absolute;z-index:1;inset:0;background-size:400% 100%;background-repeat:no-repeat;background-position:0 0}
+.committee-page[data-committee="AIPPM"] .mu-sprite-shadow{position:absolute;left:7%;bottom:-2%;width:86%;height:10%;border-radius:50%;background:#050506a8;filter:blur(7px);transform:scaleY(.55)}
+.committee-page[data-committee="AIPPM"] .mu-sprite-shah{width:clamp(94px,11vw,176px)}
+.committee-page[data-committee="AIPPM"] .mu-sprite-ravi{width:clamp(96px,10.7vw,171px);z-index:2}
+.committee-page[data-committee="AIPPM"] .mu-illustration-label{z-index:5;right:auto;left:2%;bottom:2%;font-size:10px;opacity:.78}
+
+/* Simulated Indian market: discreet updates, rotating names, readable index strip. */
+.mu-market-indices{display:flex;align-items:center;justify-content:space-around;gap:12px;min-height:31px;padding:5px 15px;border-bottom:1px solid #a9834e65;color:#e8d6b7;font:700 11px var(--mono,monospace);letter-spacing:.05em}
+.mu-market-indices .up{color:#b9f56b}.mu-market-indices .down{color:#ff87ac}
+.mu-market-row.market-tick [data-price],.mu-market-row.market-tick [data-change]{animation:muQuoteFlip .42s ease-out}
+@keyframes muQuoteFlip{0%{opacity:.55;transform:translateY(4px)}100%{opacity:1;transform:translateY(0)}}
+
+/* Scroll progress drives the broker within the right margin; the footer fades it out. */
+.dalal-page.open .dp-mascot{top:calc(15vh + var(--mascot-shift,0px))!important;bottom:auto!important;right:clamp(6px,1.4vw,20px)!important;width:clamp(78px,8vw,112px)!important;will-change:top}
+.dalal-page.open.has-scrolled .dp-mascot,.dalal-page.open.at-register.has-scrolled .dp-mascot{opacity:.78!important;visibility:visible!important}
+.dalal-page.open.near-footer .dp-mascot{opacity:0!important;visibility:hidden!important}
+@media(max-width:800px){.dalal-page.open .dp-mascot{right:-12px!important;width:65px!important}.committee-page.open[data-committee="AIPPM"] .mu-character{height:min(var(--figure-height),18vh);width:9vw}.mu-market-indices{font-size:9px;gap:5px}}
+@media(max-width:560px){.committee-page.open[data-committee="MCC"] .cp-steps li{padding-inline:15px}.mu-market-indices{font-size:8px;letter-spacing:0}.dalal-page.open .dp-mascot{right:-25px!important;width:48px!important;animation:none}.committee-page.open[data-committee="AIPPM"] .cp-hero h1{font-size:clamp(2.8rem,10vw,5.2rem)!important}.committee-page.open[data-committee="AIPPM"] .mu-character:not(.mu-character-modi):not(.mu-character-ravi):not(.mu-character-sonia){display:none}.committee-page.open[data-committee="AIPPM"] .mu-character{width:20vw;height:min(var(--figure-height),19vh)}.committee-page.open[data-committee="AIPPM"] .mu-character-modi{left:23%}.committee-page.open[data-committee="AIPPM"] .mu-character-ravi{left:52%}.committee-page.open[data-committee="AIPPM"] .mu-character-sonia{left:82%}}
+@media(max-width:560px){.dalal-page.open .dp-nav-right{gap:8px}}
+@media(max-width:560px){.dalal-page.open.at-register.has-scrolled .dp-mascot{right:-30px!important;opacity:.65!important}}
+/* This must win over the registration-state visibility rule. */
+.dalal-page.open.near-footer.has-scrolled .dp-mascot{opacity:0!important;visibility:hidden!important}
+@media(prefers-reduced-motion:reduce){.mu-market-row.market-tick [data-price],.mu-market-row.market-tick [data-change]{animation:none!important}}
+
+@media(max-width:760px){
+  .committee-page[data-committee="AIPPM"] .mu-sprite-meloni,
+  .committee-page[data-committee="AIPPM"] .mu-sprite-rahul{display:none}
+  .committee-page[data-committee="AIPPM"] .mu-sprite-shah{left:12%;width:clamp(72px,12vw,104px)}
+  .committee-page[data-committee="AIPPM"] .mu-sprite-modi{left:33%}
+  .committee-page[data-committee="AIPPM"] .mu-sprite-ravi{left:56%;width:clamp(84px,13vw,116px)}
+  .committee-page[data-committee="AIPPM"] .mu-sprite-sonia{left:83%}
+}
+@media(max-width:560px){
+  .committee-page.open[data-committee="AIPPM"] .cp-hero h1{font-size:clamp(2.45rem,9vw,4.6rem)!important}
+  .committee-page.open[data-committee="AIPPM"] .cp-hero-copy{margin-bottom:4vh}
+  .committee-page[data-committee="AIPPM"] .mu-sprite-shah{display:none}
+  .committee-page[data-committee="AIPPM"] .mu-sprite-character{bottom:clamp(12px,3vh,26px);width:clamp(75px,22vw,101px)}
+  .committee-page[data-committee="AIPPM"] .mu-sprite-modi{left:19%}
+  .committee-page[data-committee="AIPPM"] .mu-sprite-ravi{left:50%;width:clamp(82px,25vw,114px)}
+  .committee-page[data-committee="AIPPM"] .mu-sprite-sonia{left:81%}
+  .committee-page[data-committee="AIPPM"] .mu-illustration-label{font-size:7px;bottom:1%}
+}
+
+/* The four editorial heroes share one aligned action row. Other committees retain their layout. */
+.mu-hero-actions{display:contents}
+.committee-page.open:is([data-committee="MCC"],[data-committee="AIPPM"],[data-committee="IP"]) .mu-hero-actions{display:flex;align-items:stretch;justify-content:center;gap:16px;margin-top:22px;flex-wrap:wrap}
+.committee-page.open:is([data-committee="MCC"],[data-committee="AIPPM"],[data-committee="IP"]) .mu-hero-actions .cp-cta-row{gap:16px;margin-top:0;width:100%}
+.committee-page.open:is([data-committee="MCC"],[data-committee="AIPPM"],[data-committee="IP"]) .mu-hero-actions :is(.cp-primary,.mu-start-registration){display:inline-flex;align-items:center;justify-content:space-between;gap:18px;min-width:220px;min-height:52px;margin:0;padding:13px 21px;border-radius:999px;font:700 13px/1.2 var(--sans,Arial);white-space:nowrap}
+.committee-page.open:is([data-committee="MCC"],[data-committee="AIPPM"],[data-committee="IP"]) .mu-hero-actions .mu-start-registration{border-color:#f5e8d4;background:#f5e8d4;color:#16141a}
+.committee-page.open:is([data-committee="MCC"],[data-committee="AIPPM"],[data-committee="IP"]) .cp-hero-copy{align-items:center;text-align:center}
+.committee-page.open[data-committee="AIPPM"] .cp-hero h1 br{display:none}
+.committee-page.open[data-committee="AIPPM"] .cp-hero h1 em:empty{display:none}
+.committee-page.open[data-committee="IP"] .cp-hero h1{font-size:clamp(3.4rem,8vw,8rem)!important}
+.committee-page.open[data-committee="AIPPM"] .cp-hero-copy{margin-bottom:clamp(100px,16vh,150px)}
+.dalal-page.open .dp-hero-actions{gap:16px}
+.dalal-page.open .dp-hero-actions :is(.dp-primary,.mu-dalal-register){min-height:52px;min-width:220px;padding:13px 21px}
+.mcc-flight-tagline{display:block;margin:clamp(20px,3vh,32px) auto 0;color:#ead5ad;font:700 clamp(10px,1vw,15px)/1.55 var(--mono,monospace);letter-spacing:.19em;text-transform:uppercase;text-shadow:0 6px 24px #000;max-width:90vw}
+.dalal-crash .dc-title h1{font-size:clamp(2.8rem,7vw,7rem);line-height:.96;letter-spacing:-.065em}
+.mc-journey.playing[data-code="AIPPM"] .mc-heading{animation:muAippmNameReveal 3.8s ease-out both}
+@keyframes muAippmNameReveal{0%,78%{opacity:0;transform:translateY(-37%) scale(.93);filter:blur(18px)}86%,100%{opacity:1;transform:translateY(-50%) scale(1);filter:none}}
+@media(max-width:560px){
+  .committee-page.open:is([data-committee="MCC"],[data-committee="AIPPM"],[data-committee="IP"]) .mu-hero-actions{flex-direction:column;width:min(280px,100%);gap:11px;margin-inline:auto}
+  .committee-page.open:is([data-committee="MCC"],[data-committee="AIPPM"],[data-committee="IP"]) .mu-hero-actions :is(.cp-primary,.mu-start-registration){width:100%;min-width:0;min-height:46px;padding:11px 18px;font-size:12px}
+  .committee-page.open[data-committee="AIPPM"] .cp-hero h1{font-size:clamp(3.3rem,16vw,5.2rem)!important}
+  .committee-page.open[data-committee="AIPPM"] .cp-hero-copy{margin-bottom:5vh}
+  .dalal-page.open .dp-hero-actions :is(.dp-primary,.mu-dalal-register){min-height:46px;min-width:0;padding:11px 18px}
+  .mcc-flight-tagline{max-width:300px;font-size:10px;letter-spacing:.1em;margin-top:18px}
+  .dalal-crash .dc-title h1{font-size:clamp(2rem,8.5vw,4.2rem)}
+}
+
+/* UNHRC / CCEP / STARTUP: the hero photo stays visible behind every section while scrolling */
+.committee-page.open:is([data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-scroll-backdrop{filter:brightness(.78) saturate(.9)}
+.committee-page.open[data-committee="UNHRC"] .cp-scroll-backdrop{background-image:linear-gradient(180deg,#0710208a,#07102080),url('../images/unhrc-geneva-cinematic.webp')!important}
+.committee-page.open[data-committee="CCEP"] .cp-scroll-backdrop{background-image:linear-gradient(180deg,#04181e88,#04181e7a),url('../images/ccep-singapore-cinematic.webp')!important}
+.committee-page.open[data-committee="STARTUP"] .cp-scroll-backdrop{background-image:linear-gradient(180deg,#14091f88,#14091f7a),url('../images/startup-san-francisco-cinematic.webp')!important}
+
+/* ===== UNHRC / CCEP / STARTUP / IPL: lower page matches the MCC layout (steps as glass cards, MCC label sizes, no duplicate register heading) ===== */
+.committee-page.open:is([data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-steps{display:grid;gap:12px;padding:0!important;border:0!important;background:transparent!important}
+.committee-page.open:is([data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-steps li{grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:start;padding:22px 20px;border:1px solid color-mix(in srgb,var(--committee-accent) 50%,transparent)!important;border-radius:3px;background:linear-gradient(105deg,color-mix(in srgb,var(--committee-accent) 16%,transparent),#ffffff05 28%,#101322e8 100%);box-shadow:inset 0 1px 0 #ffffff66,inset 0 -1px 0 #05070c99,0 9px 24px #0006}
+.committee-page.open:is([data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-steps li>i{width:44px;font-size:13px;line-height:1.5;padding-top:2px}
+.committee-page.open:is([data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-steps li b{font-size:16px}
+.committee-page.open:is([data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) :is(.cp-section-label small,.cp-do-head>small,.cp-awards-head>small,.cp-register>div>small,.cp-awards article small){font-size:12px;font-weight:700;letter-spacing:.12em}
+.committee-page.open:is([data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) :is(.cp-awards article span,.cp-awards-head>p,.cp-steps li small){font-size:clamp(.9rem,1.1vw,1.02rem)}
+.committee-page.open:is([data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-awards article small{margin-bottom:8px;align-self:flex-start}
+.committee-page.open:is([data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-awards article b{margin:4px 0 10px}
+.committee-page.open:is([data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-register>div:first-child h2{display:none}
+.committee-page.open:is([data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-event-meta{display:none}
+@media(max-width:560px){.committee-page.open:is([data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-steps li{padding-inline:15px}}
+/* step cards: keep the numbers clear of the card edge at every width */
+.committee-page.open:is([data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-steps li{margin:0!important;padding:22px 24px 22px 24px!important;grid-template-columns:48px minmax(0,1fr)!important;gap:14px!important;box-sizing:border-box}
+.committee-page.open:is([data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-steps li>i{display:block;width:48px;min-width:0;margin:0!important;padding:3px 0 0 0!important;text-align:left;font-size:14px;letter-spacing:.08em}
+@media(max-width:560px){.committee-page.open:is([data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-steps li{padding:18px 18px!important;grid-template-columns:40px minmax(0,1fr)!important;gap:12px!important}.committee-page.open:is([data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-steps li>i{width:40px}}
+/* ===== steps: plain numbered rows with thin dividers (same as IP), for UNHRC / CCEP / STARTUP / IPL ===== */
+.committee-page.open:is([data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-steps{display:block!important;gap:0!important;padding:0!important;margin:0!important;border:0!important;background:none!important;box-shadow:none!important}
+.committee-page.open:is([data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-steps li{position:static!important;display:grid!important;grid-template-columns:48px minmax(0,1fr)!important;gap:16px!important;align-items:normal!important;padding:22px 0!important;margin:0!important;border:0!important;border-bottom:1px solid #ffffff42!important;border-radius:0!important;background:none!important;box-shadow:none!important;backdrop-filter:none!important;transform:none!important}
+.committee-page.open:is([data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-steps li>i{display:block!important;width:auto!important;margin:0!important;padding:0!important;font-size:.67rem!important;font-weight:500!important;line-height:normal!important;letter-spacing:normal!important;color:#f0e9db!important;text-align:start}
+.committee-page.open:is([data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-steps li b{font-size:1rem!important}
+@media(max-width:560px){.committee-page.open:is([data-committee="UNHRC"],[data-committee="CCEP"],[data-committee="STARTUP"],[data-committee="IPL"]) .cp-steps li{padding:18px 0!important;grid-template-columns:40px minmax(0,1fr)!important;gap:12px!important}}
+
+/* ===== hero buttons side by side on every committee ===== */
+.cp-cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:center;margin-top:12px}
+.cp-cta-row>*{margin:0!important}
+@media(max-width:420px){.cp-cta-row{flex-direction:column}}
+
+/* Targeted final art pass: retain existing committee sections, panels, and geometry. */
+.committee-page.open[data-committee="CCEP"] .cp-scroll-backdrop{
+  background-image:linear-gradient(180deg,#03101aa8 0%,#06131b8c 42%,#03090fdd 100%),url('../images/ccep-port-night-v1.webp')!important;
+  background-position:center 52%;filter:brightness(.88) saturate(1.06) contrast(1.04);
+  animation:committeeBackdropDrift 38s ease-in-out infinite alternate;
+}
+.committee-page.open[data-committee="STARTUP"] .cp-scroll-backdrop{
+  background-image:linear-gradient(180deg,#110c1c8c 0%,#13101a78 42%,#090b13df 100%),url('../images/startup-sf-boardroom-golden-v1.webp')!important;
+  background-position:center 54%;filter:brightness(.88) saturate(.94) contrast(1.03);
+  animation:committeeBackdropDrift 42s ease-in-out infinite alternate;
+}
+.mc-journey[data-code="CCEP"] .mc-photo{
+  background-image:linear-gradient(0deg,#03131cd9 0%,#08202a24 58%,#03081352 100%),url('../images/ccep-port-night-v1.webp')!important;
+}
+.committee-page.open[data-committee="CCEP"] .cinema-hero-scene[data-code="CCEP"]{
+  background:#06131b url('../images/ccep-port-night-v1.webp') center/cover no-repeat!important;
+}
+.committee-page.open[data-committee="CCEP"] .cinema-hero-scene[data-code="CCEP"] .ch-photo{
+  background-image:linear-gradient(0deg,#031722bf 0%,#06151a1c 56%,#06121a55 100%),url('../images/ccep-port-night-v1.webp')!important;
+}
+.committee-page.open[data-committee="STARTUP"] .cinema-hero-scene[data-code="STARTUP"]{
+  background:linear-gradient(0deg,#100c19b8,#281b2a24),url('../images/startup-sf-boardroom-golden-v1.webp') center/cover no-repeat!important;
+}
+.committee-page.open[data-committee="STARTUP"] .cinema-hero-scene[data-code="STARTUP"] .ch-photo{
+  background-image:linear-gradient(0deg,#0a0b13b8 0%,#221a2822 56%,#17101a49 100%),url('../images/startup-sf-boardroom-golden-v1.webp')!important;
+}
+.committee-page.open[data-committee="CCEP"] :is(.cp-section,.cp-do,.cp-awards,.cp-register){
+  background-image:radial-gradient(ellipse at 92% 8%,#d9b76519,transparent 37%),linear-gradient(118deg,#c7e5e516 0%,transparent 19%,#050b123b 45%,#d9b76513 71%,transparent 86%),repeating-linear-gradient(132deg,#ffffff05 0 1px,transparent 1px 8px),linear-gradient(135deg,#20292c 0%,#11171b 43%,#25282a 60%,#0f1519 100%);
+}
+.committee-page.open[data-committee="CCEP"] :is(.cp-section-label,.cp-brief-copy,.cp-do-head,.cp-steps,.cp-awards-head,.cp-awards article,.cp-register>div){
+  border-color:#c6b57970;background:linear-gradient(145deg,#e0d09b18,#ffffff04 32%,#060d13b4 74%),linear-gradient(120deg,#30363a,#171c20 48%,#282b2d);
+}
+.committee-page.open[data-committee="STARTUP"] :is(.cp-section,.cp-do,.cp-awards,.cp-register){
+  background-image:radial-gradient(ellipse at 10% 0%,#dcaa6530,transparent 36%),linear-gradient(118deg,#e7cfaa16 0%,transparent 18%,#05070c38 46%,#d4b47716 70%,transparent 85%),repeating-linear-gradient(132deg,#ffffff05 0 1px,transparent 1px 8px),linear-gradient(135deg,#2a2627 0%,#14151a 42%,#2a2428 60%,#101218 100%);
+}
+.committee-page.open[data-committee="STARTUP"] :is(.cp-section-label,.cp-brief-copy,.cp-do-head,.cp-steps,.cp-awards-head,.cp-awards article,.cp-register>div){
+  border-color:#d5b87970;background:linear-gradient(145deg,#f0d6a11d,#ffffff04 32%,#090b12b5 74%),linear-gradient(120deg,#393233,#18191e 48%,#30292a);
+}
+@media(prefers-reduced-motion:reduce){
+  .committee-page.open:is([data-committee="CCEP"],[data-committee="STARTUP"]) .cp-scroll-backdrop{animation:none}
+}

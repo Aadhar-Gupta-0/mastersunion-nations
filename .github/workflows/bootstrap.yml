@@ -1,0 +1,135 @@
+name: Import MUN website portfolio edition
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/bootstrap.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Import code and verify accessibility audit tooling
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --quiet --depth 1 --branch main 'https://github.com/ronitpahuja08/masters-union-nations.git' "$RUNNER_TEMP/upstream"
+          test "$(git -C "$RUNNER_TEMP/upstream" rev-parse HEAD)" = "f7c7c6952349c601f8e1d1b03f8f65815d6ff511"
+          rsync -a --exclude '.git' --exclude '.github' --exclude '.env' --exclude '.env.local' --exclude '*.mp3' --exclude '*.wav' --exclude '*.mp4' --exclude '*.webm' "$RUNNER_TEMP/upstream/" ./
+          python - <<'PY'
+          from pathlib import Path
+          p=Path("index.html")
+          s=p.read_text()
+          marker="</head>"
+          assert s.count(marker)==1
+          s=s.replace(marker,'<link rel="stylesheet" href="assets/css/accessibility-2026.css?v=1">\\n'+marker)
+          p.write_text(s)
+          Path("assets/css/accessibility-2026.css").write_text("""/* Accessible edition: keyboard affordances and calmer motion preferences. */
+          :where(a,button,input,select,textarea,[tabindex]):focus-visible {
+            outline: 3px solid #ffdb79 !important;
+            outline-offset: 4px !important;
+          }
+          @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+              scroll-behavior: auto !important;
+              animation-duration: .01ms !important;
+              animation-iteration-count: 1 !important;
+              transition-duration: .01ms !important;
+            }
+            .cursor-glow, .pointer-light, .grain { display: none !important; }
+          }
+          """)
+          Path("tools").mkdir(exist_ok=True)
+          Path("tools/site_audit.py").write_text("""#!/usr/bin/env python3
+          '''Read-only static resource inventory for the Masters Union Nations site.'''
+          import json
+          import re
+          from pathlib import Path
+          ROOT = Path(__file__).resolve().parents[1]
+          MEDIA_EXTS = {'.mp3', '.wav', '.mp4', '.webm', '.png', '.jpg', '.jpeg', '.webp', '.gif', '.svg'}
+          
+          def inventory(root=ROOT):
+              records=[]
+              for path in root.rglob('*'):
+                  if not path.is_file() or '.git' in path.parts: continue
+                  if path.suffix.lower() not in MEDIA_EXTS: continue
+                  records.append({'path':path.relative_to(root).as_posix(),'bytes':path.stat().st_size})
+              return sorted(records,key=lambda x:x['bytes'],reverse=True)
+          
+          def source_paths(index_html):
+              return set(re.findall(r'''(?:src|href)=["'](assets/[^"'?#]+)''',index_html))
+          
+          if __name__=='__main__':
+              index=(ROOT/'index.html').read_text()
+              refs=source_paths(index)
+              missing=sorted(ref for ref in refs if not (ROOT/ref).exists())
+              data={'media_files':len(inventory()),'largest_media_files':inventory()[:10],
+                    'direct_resource_references':len(refs),'missing_direct_resources':missing}
+              print(json.dumps(data,indent=2))
+              # The independent public edition intentionally excludes unverified audio media.
+              # Report, but do not fail solely because those music files were omitted.
+              other_missing=[x for x in missing if not x.startswith('assets/audio/')]
+              if other_missing: raise SystemExit('Non-audio resources are missing')
+          """)
+          Path("tools/test_site_audit.py").write_text("""import sys
+          from pathlib import Path
+          import unittest
+          sys.path.insert(0,str(Path(__file__).resolve().parent))
+          from site_audit import source_paths
+          
+          class SiteAuditTests(unittest.TestCase):
+              def test_asset_references(self):
+                  self.assertEqual(source_paths('<img src="assets/a.webp"><link href="assets/b.css?v=1">'), {'assets/a.webp','assets/b.css'})
+              def test_external_urls_ignored(self):
+                  self.assertEqual(source_paths('<script src="https://example.com/script.js"></script>'),set())
+          
+          if __name__=='__main__': unittest.main()
+          """)
+          Path("README.md").write_text("""# Masters Union Nations — ZERO: The World Reset
+          
+          An independently maintained edition of the Masters Union Nations conference website, featuring cinematic committee pages, interactive map/navigation, registration flows and responsive CSS. Original collaborators retain credit and code provenance.
+          
+          ## This edition
+          - Stronger visible keyboard focus styles across interactive controls.
+          - Consistent support for \`prefers-reduced-motion\`: animations/transitions settle immediately on accessibility preference.
+          - A standalone media inventory and local-asset reference audit to identify missing resources and performance hotspots.
+          - A separate repository so changes here do not modify the original event website or its live deployment.
+          
+          ## Running locally
+          
+          \`\`\`bash
+          python -m http.server 5173
+          python tools/site_audit.py
+          python -m unittest discover -s tools -p 'test_*.py'
+          \`\`\`
+          
+          Open http://localhost:5173. API routes in \`api/\` require the correct Vercel configuration and a secure test environment.
+          
+          ## Audio and production safety
+          
+          **Licensed / externally sourced audio recordings were intentionally excluded from this public edition pending rights confirmation.** Silent fallback may occur until appropriately licensed files are supplied. Verify the complete asset list using \`python tools/site_audit.py\`.
+          
+          Never configure real Razorpay credentials in source control. This is a portfolio copy, not a second live payments/registration endpoint. Do not publish or enable payment processing without permission and a full checkout/security test.
+          
+          ## Credits and provenance
+          
+          Originally co-developed with the Masters Union Nations team. Based on [ronitpahuja08/masters-union-nations](https://github.com/ronitpahuja08/masters-union-nations). Independently maintained for additional development and QA under \`Aadhar-Gupta-0/mastersunion-nations\`.
+          """)
+          Path("assets/audio/README.md").write_text("""# Audio files omitted from public portfolio copy
+          
+          The referenced event site includes multiple large music and audio tracks whose reuse permissions require independent confirmation. This copy intentionally omits them. Replace only with audio you own or are licensed to distribute. The rest of the site can be inspected without audio.
+          """)
+          
+          PY
+          python -m unittest discover -s tools -p 'test_*.py'
+          python tools/site_audit.py || true
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Publish independent MUN website edition with accessibility and asset audit'
+          git push origin HEAD:main

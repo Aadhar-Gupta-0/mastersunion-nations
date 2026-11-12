@@ -16,7 +16,7 @@ def inventory(root=ROOT):
 
 def source_paths(index_html):
     # Accept both root-relative asset paths and explicit ./assets paths.
-    paths = re.findall(r'''(?:src|href)=["'](?:\\./)?(assets/[^"'?#]+)''', index_html)
+    paths = re.findall(r'''(?:src|href)=["'](?:[.]/)?(assets/[^"'?#]+)''', index_html)
     return set(paths)
 
 def oversized_media(root=ROOT, max_bytes=10 * 1024 * 1024):
